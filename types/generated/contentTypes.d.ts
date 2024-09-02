@@ -794,13 +794,14 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     singularName: 'category';
     pluralName: 'categories';
     displayName: 'category';
+    description: '';
   };
   options: {
     draftAndPublish: false;
   };
   attributes: {
     name: Attribute.String & Attribute.Required & Attribute.Unique;
-    slug: Attribute.UID<'api::category.category', 'name'>;
+    slug: Attribute.UID<'api::category.category', 'name'> & Attribute.Required;
     games: Attribute.Relation<
       'api::category.category',
       'manyToMany',
@@ -873,7 +874,14 @@ export interface ApiGameGame extends Schema.CollectionType {
     name: Attribute.String & Attribute.Required;
     slug: Attribute.UID<'api::game.game', 'name'>;
     short_description: Attribute.Text;
-    description: Attribute.Blocks;
+    description: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
     price: Attribute.Decimal & Attribute.Required & Attribute.DefaultTo<0>;
     release_date: Attribute.Date;
     rating: Attribute.Enumeration<

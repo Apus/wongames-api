@@ -4,7 +4,8 @@
   "info": {
     "singularName": "category",
     "pluralName": "categories",
-    "displayName": "category"
+    "displayName": "category",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -19,7 +20,7 @@
     "slug": {
       "type": "uid",
       "targetField": "name",
-      "required": false
+      "required": true
     },
     "games": {
       "type": "relation",

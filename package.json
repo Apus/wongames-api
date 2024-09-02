@@ -12,16 +12,19 @@
     "postinstall": "patch-package"
   },
   "dependencies": {
+    "@ckeditor/strapi-plugin-ckeditor": "^0.0.13",
     "@strapi/plugin-cloud": "4.25.9",
     "@strapi/plugin-graphql": "^4.25.9",
     "@strapi/plugin-i18n": "4.25.9",
     "@strapi/plugin-users-permissions": "4.25.9",
     "@strapi/strapi": "4.25.9",
+    "jsdom": "^25.0.0",
     "patch-package": "^8.0.0",
     "pg": "8.8.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "5.3.4",
+    "slugify": "^1.6.6",
     "styled-components": "5.3.3"
   },
   "author": {
